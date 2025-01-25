@@ -47,10 +47,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "/blogs/"
+          hugo build
 
       - name: 📂 Sync files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -59,4 +56,4 @@ jobs:
            username: if0_38153464
            password: ${{ secrets.ftp_password }}
            local-dir: ./public/
-           server-dir: './alok.html-5.me/htdocs/'
+           server-dir: './alok.html-5.me/htdocs/blogs/'
