@@ -50,7 +50,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "/"
+            --baseURL "/blogs/"
 
       - name: 📂 Sync files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
