@@ -1,5 +1,5 @@
 title = 'A-logs'
-baseURL = 'https://alok.html-5.me/blogs/'
+baseURL = 'https://alok.html-5.me/'
 languageCode = 'en-us'
 defaultContentLanguage = "en-gb"
 enableEmoji = true
