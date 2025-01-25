@@ -15,8 +15,8 @@ Right now i can think only of these things..
 
 ## My Coding journey
 As of now, I am learning [React.js](https://react.dev) along with fiddling around with cli tools and [Neovim](https://neovim.io) as my IDE.
-You can see some of my works [here](https://alok.html-5.net/projects). I'll share my experience with Neovim in a seperate blog.
+You can see some of my works [here](https://alok.html-5.me/projects). I'll share my experience with Neovim in a seperate blog.
 ## Daily Life Update 
 As I am writing this,my 3rd semester exams have just ended. I'm eager to make the most of the time I have now and be consistent with my blogging, keeping you updated with my progress and daily life.
 
-I hope you enjoyed reading tohis post. I'll continue to share more in future, so stay tuned and feel free to give your thoughts or suggestions.
+I hope you enjoyed reading this post. I'll continue to share more in future, so stay tuned and feel free to give your thoughts or suggestions.
