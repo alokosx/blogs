@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A-logs</title>
+    <link>http://localhost:1313/blogs/posts/</link>
+    <description>Recent content in Posts on A-logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 25 Jan 2025 22:45:04 +0530</lastBuildDate><atom:link href="http://localhost:1313/blogs/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/blogs/posts/first-post/</link>
+      <pubDate>Sat, 25 Jan 2025 22:45:04 +0530</pubDate>
+      
+      <guid>http://localhost:1313/blogs/posts/first-post/</guid>
+      
+      <description>&lt;p&gt;Well, hello there,
+I am &lt;strong&gt;Alok Patel&lt;/strong&gt;, an undergrad currently pursuing my Bachelors.
+Well I decided to start this blog page for a few things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To share my code journey.&lt;/li&gt;
+&lt;li&gt;To  my content writing skills.&lt;/li&gt;
+&lt;li&gt;For my daily life musings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Right now i can think only of these things..&lt;/p&gt;
+&lt;h2 id=&#34;my-coding-journey&#34;&gt;My Coding journey&lt;/h2&gt;
+&lt;p&gt;As of now, I am learning &lt;a href=&#34;https://react.dev&#34;&gt;React.js&lt;/a&gt; along with fiddling around with cli tools and &lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt; as my IDE.
+You can see some of my works &lt;a href=&#34;https://alok.html-5.net/projects&#34;&gt;here&lt;/a&gt;. I&amp;rsquo;ll share my experience with Neovim in a seperate blog.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
