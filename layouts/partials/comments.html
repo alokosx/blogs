@@ -1,0 +1,21 @@
+<script type="text/javascript" src="https://gateway.pinata.cloud/ipfs/QmSiWN27KZZ1XE32jKwifBnS3nWTUcFGNArKzur2nmDgoL/v0.13.0/cactus.js"></script>
+<link rel="stylesheet" href="https://gateway.pinata.cloud/ipfs/QmSiWN27KZZ1XE32jKwifBnS3nWTUcFGNArKzur2nmDgoL/v0.13.0/style.css" type="text/css">
+<div>
+ <h2>Comments</h2> 
+<div id="comment-section"></div>
+</div>
+<script>
+initComments({
+  node: document.getElementById("comment-section"),
+  defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+  serverName: "cactus.chat",
+  siteName: "alokosx",
+  commentSectionId: "{{ .File.Dir | replaceRE `^.*/([^/]+)/$` `$1` }}"
+})
+</script>
+<style>
+.cactus-container {
+  border-top: 2px solid #ccc; /* Adjust the style as needed */
+  padding-top: 20px;
+}
+</style>
