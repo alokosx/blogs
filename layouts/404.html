@@ -1,14 +1,46 @@
 {{ define "title"}} 404 | NOT FOUND {{ end }} {{ define "main"}}
+<style>
+  #back-home {
+    display: none;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+</style>
+
 <div class="wrapper">
   <main class="main-404" aria-label="Content">
     <h1>{{ T "errors.404" }}</h1>
-    <p>
-      Where we are, there's only air,<br />
-      A page misplaced, it isn't there.<br />
-      In the void where data fades,<br />
-      Questions linger, answers evade.<br />
-      Not all paths lead where we care.
-    </p>
+    <div class="typed-strings">
+      <p>
+        Where we are, there's only air,<br />
+        A page misplaced, it isn't there.<br />
+        In the void where data fades,<br />
+        Questions linger, answers evade.<br />
+        Not all paths lead where we care.
+      </p>
+    </div>
+    <span class="typed"></span>
+    <a href="{{ .Site.BaseURL }}" id="back-home">Go back to homepage</a>
   </main>
 </div>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed(".typed", {
+    stringsElement: ".typed-strings",
+    typeSpeed: 50,
+    // Adding function to show link when typing is complete
+    onComplete: function () {
+      document.getElementById("back-home").style.display = "block";
+    },
+  });
+  // Adding event listener for double-click to skip animation
+  document.addEventListener("dblclick", function () {
+    typed.destroy();
+    document.querySelector(".typed").innerHTML =
+      document.querySelector(".typed-strings").innerHTML;
+    document.getElementById("back-home").style.display = "block";
+  });
+</script>
+
 {{ end }}
