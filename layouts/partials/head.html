@@ -1,0 +1,29 @@
+<head>
+    {{- partial "meta/main.html" . }}
+    {{- hugo.Generator }}
+
+    {{/* Open Graph + Twitter Cards */}}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+    {{ end }}
+
+    {{/* Styles */}}
+    {{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "style.css") | minify | fingerprint }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+    {{ $codeCSS := resources.Get "code-highlight.css" | minify | fingerprint }}
+    <link href="{{ $codeCSS.RelPermalink }}" rel="stylesheet">
+
+    {{/* Favicons with white background */}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/blogs/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blogs/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blogs/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/blogs/icons/favicon.ico">
+    <link rel="mask-icon" href="/blogs/icons/safari-pinned-tab.svg">
+    {{/* NOTE: Removed SVG favicon to prevent transparency issue */}}
+
+</head>
