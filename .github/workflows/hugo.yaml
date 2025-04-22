@@ -1,15 +1,12 @@
 name: Build and Deploy Hugo Site to FTP Server
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches:
-      - main
+      - main  # Runs on push to main branch
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch:  # Manual trigger from Actions tab
 
-# Default to bash
 defaults:
   run:
     shell: bash
@@ -21,6 +18,7 @@ jobs:
     env:
       HUGO_VERSION: 0.141.0
       TZ: Asia/Kolkata
+
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
@@ -28,32 +26,32 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Install Hugo CLI
+      - name: 📦 Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-      - name: Install Dart Sass
+      - name: 🧵 Install Dart Sass
         run: sudo snap install dart-sass
 
-      - name: Install Node.js dependencies
+      - name: 📦 Install Node.js dependencies (if needed)
         run: |
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci
           fi
 
-      - name: Build with Hugo
+      - name: 🏗️ Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo build
+          hugo --baseURL "https://alok.html-5.me/blogs/"
 
-      - name: 📂 Sync files to FTP
+      - name: 📂 Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-           server: 185.27.134.11
-           username: if0_38153464
-           password: ${{ secrets.ftp_password }}
-           local-dir: ./public/
-           server-dir: './alok.html-5.me/htdocs/blogs/'
+          server: 185.27.134.11
+          username: if0_38153464
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./public/
+          server-dir: ./alok.html-5.me/htdocs/blogs/
